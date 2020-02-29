@@ -52,7 +52,6 @@ public class Weapon : MonoBehaviour
 
     private void CreateHitImpact(RaycastHit hit)
     {
-        print("hit efffect");
         GameObject hitEffect = Instantiate(_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
 
         Destroy(hitEffect, 0.01f);
