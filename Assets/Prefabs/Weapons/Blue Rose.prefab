@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 748245289341320886}
   - component: {fileID: 748245289344255460}
   - component: {fileID: 748245289343568176}
-  - component: {fileID: 8014302662668168102}
   m_Layer: 0
   m_Name: Blue Rose
   m_TagString: Untagged
@@ -80,23 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &8014302662668168102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748245289341069924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dabfbe06df34a274bba4b826b2fc89eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
-  _range: 100
-  _muzzleFlash: {fileID: 4221656812959743194}
-  _hitEffect: {fileID: 5698208854183100299, guid: 867b2f3c379f9dd4b83a7889935ee655,
-    type: 3}
 --- !u!1001 &629996219580460422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -214,12 +196,6 @@ PrefabInstance:
 --- !u!4 &2793349097355565973 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
-    type: 3}
-  m_PrefabInstance: {fileID: 629996219580460422}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &4221656812959743194 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813,
     type: 3}
   m_PrefabInstance: {fileID: 629996219580460422}
   m_PrefabAsset: {fileID: 0}

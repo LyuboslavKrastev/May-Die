@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class WeaponZoom : MonoBehaviour
 {
@@ -15,15 +16,21 @@ public class WeaponZoom : MonoBehaviour
 
     [SerializeField] private Canvas _crossHair;
 
+    private RigidbodyFirstPersonController _fpsController;
+
+    private float _hipSensitivity = 2f;
+    private float _sightsSensitivity = 1f;
+
+
     private float _zoomStrength = -20;
 
     void Start()
     {
-        _camera = transform.parent.parent.GetComponentInChildren<Camera>();
-        if (_camera == null)
-        {
-            Debug.LogError("Camera is NULL!");
-        }
+        _camera = FindObjectOfType<Camera>();
+        NullAlerter.AlertIfNull(_camera, nameof(_camera));
+
+        _fpsController = FindObjectOfType<RigidbodyFirstPersonController>();
+        NullAlerter.AlertIfNull(_fpsController, nameof(_fpsController));
 
         SetupZoom();
 
@@ -55,6 +62,7 @@ public class WeaponZoom : MonoBehaviour
         _camera.fieldOfView = _normalFieldOfView;
         transform.localPosition = _normalPosition;
         transform.localRotation = _normalRotation;
+        _fpsController.mouseLook.XSensitivity = _hipSensitivity;
     }
 
     private void IronSightsFire()
@@ -63,5 +71,6 @@ public class WeaponZoom : MonoBehaviour
         _camera.fieldOfView = _zoomedFieldOfView;
         transform.localPosition = _zoomedPosition;
         transform.localRotation = _zoomedRotation;
+        _fpsController.mouseLook.XSensitivity = _sightsSensitivity;
     }
 }

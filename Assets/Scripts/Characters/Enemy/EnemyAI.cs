@@ -17,10 +17,7 @@ public class EnemyAI : MonoBehaviour
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
 
-        if (_navMeshAgent == null)
-        {
-            Debug.LogError("NavMeshAgent is NULL!");
-        }
+        NullAlerter.AlertIfNull(_navMeshAgent, nameof(_navMeshAgent));
     }
 
     // Update is called once per frame

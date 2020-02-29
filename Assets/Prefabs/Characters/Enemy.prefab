@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _aggroRange: 10
+  _turnSpeed: 5
 --- !u!114 &6696578873407616587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64abbbf3f3232c245a820424d983a43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
   _damage: 25
 --- !u!114 &6004134423324740413
 MonoBehaviour:
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41f69eaefeee634eb41fbfdb250156f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitPoints: 100
+  _hitPoints: 500
 --- !u!95 &433685362
 Animator:
   serializedVersion: 3
