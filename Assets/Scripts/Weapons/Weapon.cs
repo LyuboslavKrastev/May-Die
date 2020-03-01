@@ -9,10 +9,16 @@ public class Weapon : MonoBehaviour
     [SerializeField] private GameObject _hitEffect;
     private Ammo _ammoSlot;
 
-    private int _damage = 1;
+    [SerializeField] private int _damage = 1;
     private void Start()
     {
-        _ammoSlot = GetComponent<Ammo>();
+        _ammoSlot = GetComponent<Ammo>();     
+
+        if (_ammoSlot == null)
+        {
+            _ammoSlot = transform.parent.GetComponent<Ammo>(); // For ebony and ivory
+        }
+
         NullAlerter.AlertIfNull(_ammoSlot, nameof(_ammoSlot));
     }
     void Update()

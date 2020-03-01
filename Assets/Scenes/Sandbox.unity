@@ -3514,14 +3514,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1473821154, guid: c71df114930bce640b898ee158809060, type: 3}
-      propertyPath: _crossHair
-      value: 
-      objectReference: {fileID: 1734321809}
     - target: {fileID: 1473821155, guid: c71df114930bce640b898ee158809060, type: 3}
       propertyPath: _ammoText
       value: 
       objectReference: {fileID: 586087863}
+    - target: {fileID: 359618001749997179, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: _crossHair
+      value: 
+      objectReference: {fileID: 1734321809}
     - target: {fileID: 1498316229291601533, guid: c71df114930bce640b898ee158809060,
         type: 3}
       propertyPath: m_Name
@@ -3582,11 +3583,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1498316230731859486, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2510130680820974971, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2739521709088887317, guid: c71df114930bce640b898ee158809060,
         type: 3}
       propertyPath: _gameOverCanvas
       value: 
       objectReference: {fileID: 378140693}
+    - target: {fileID: 5682667200333735042, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: _ammoText
+      value: 
+      objectReference: {fileID: 586087863}
+    - target: {fileID: 6429894543813743846, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: _ammoText
+      value: 
+      objectReference: {fileID: 586087863}
+    - target: {fileID: 8982161964858175205, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084282944554539097, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: _crossHair
+      value: 
+      objectReference: {fileID: 1734321809}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c71df114930bce640b898ee158809060, type: 3}
 --- !u!1001 &1919991987647431253

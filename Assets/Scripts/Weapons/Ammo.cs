@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Ammo : MonoBehaviour
 {
     [SerializeField] private int _ammoAmount;
-    private const int CLIP_SIZE = 1000;
     public int AmmoAmount
     {
         get
@@ -21,12 +20,12 @@ public class Ammo : MonoBehaviour
         }
     }
 
-    [SerializeField] private TextMeshProUGUI _ammoText;
-
     void Start()
     {
-        AmmoAmount = CLIP_SIZE;
+        AmmoAmount = _ammoAmount;
     }
+
+    [SerializeField] private TextMeshProUGUI _ammoText;
 
     public void ReduceAmmo()
     {
