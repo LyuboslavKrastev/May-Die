@@ -329,20 +329,6 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498316229291601535}
   m_Enabled: 1
---- !u!114 &1473821155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498316230731859486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a38abc542e79d94ba2c308d9ba6481d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ammoAmount: 1000
-  _ammoText: {fileID: 0}
 --- !u!1 &3344095326454982702
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,16 +424,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.391
       objectReference: {fileID: 0}
+    - target: {fileID: 6375209782712626749, guid: 3180e806fdfcd7449a41dcde698cfe95,
+        type: 3}
+      propertyPath: _ammoAmount
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8821718856376715279, guid: 3180e806fdfcd7449a41dcde698cfe95,
+        type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1498316229293632603}
+    - target: {fileID: 8821718856376715279, guid: 3180e806fdfcd7449a41dcde698cfe95,
+        type: 3}
+      propertyPath: _range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821718856376715279, guid: 3180e806fdfcd7449a41dcde698cfe95,
+        type: 3}
+      propertyPath: _timeBetweenShots
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821718856376715279, guid: 3180e806fdfcd7449a41dcde698cfe95,
+        type: 3}
+      propertyPath: _damage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064558480059676693, guid: 3180e806fdfcd7449a41dcde698cfe95,
         type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 1498316229293632603}
     - target: {fileID: 9064558480059676693, guid: 3180e806fdfcd7449a41dcde698cfe95,
         type: 3}
-      propertyPath: _camera
-      value: 
-      objectReference: {fileID: 1498316229293632603}
+      propertyPath: _range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064558480059676693, guid: 3180e806fdfcd7449a41dcde698cfe95,
+        type: 3}
+      propertyPath: _timeBetweenShots
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064558480059676693, guid: 3180e806fdfcd7449a41dcde698cfe95,
+        type: 3}
+      propertyPath: _damage
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 9071890360559899710, guid: 3180e806fdfcd7449a41dcde698cfe95,
         type: 3}
       propertyPath: m_Name
@@ -477,6 +498,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blue Rose
+      objectReference: {fileID: 0}
+    - target: {fileID: 748245289341069924, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 748245289341320886, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
         type: 3}
@@ -555,17 +581,16 @@ PrefabInstance:
       objectReference: {fileID: 1498316229293632603}
     - target: {fileID: 5857734057019818846, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
         type: 3}
+      propertyPath: _timeBetweenShots
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857734057019818846, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
+        type: 3}
       propertyPath: _damage
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb649899a9c1b5d4fa643ff7a3c42a12, type: 3}
---- !u!1 &1498316230731859486 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 748245289341069924, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
-    type: 3}
-  m_PrefabInstance: {fileID: 2209397749893377146}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1498316230732108492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 748245289341320886, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
@@ -587,15 +612,21 @@ PrefabInstance:
     - target: {fileID: -8851501623190179619, guid: 2c3055a11cb8f8540a181490a4c34b7c,
         type: 3}
       propertyPath: _range
-      value: 60
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8851501623190179619, guid: 2c3055a11cb8f8540a181490a4c34b7c,
+        type: 3}
+      propertyPath: _timeBetweenShots
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8851501623190179619, guid: 2c3055a11cb8f8540a181490a4c34b7c,
+        type: 3}
+      propertyPath: _damage
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 101050, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
       propertyPath: m_Name
       value: Red Queen
-      objectReference: {fileID: 0}
-    - target: {fileID: 101050, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 457962, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -644,6 +675,11 @@ PrefabInstance:
     - target: {fileID: 457962, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784794370489887555, guid: 2c3055a11cb8f8540a181490a4c34b7c,
+        type: 3}
+      propertyPath: _ammoAmount
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}

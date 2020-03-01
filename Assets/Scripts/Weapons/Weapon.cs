@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -8,35 +9,41 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem _muzzleFlash;
     [SerializeField] private GameObject _hitEffect;
     private Ammo _ammoSlot;
+    private bool _canShoot = true;
+    [SerializeField] float _timeBetweenShots = 0.5f;
 
     [SerializeField] private int _damage = 1;
     private void Start()
     {
-        _ammoSlot = GetComponent<Ammo>();     
+        _ammoSlot = GetComponent<Ammo>();
 
         if (_ammoSlot == null)
         {
-            _ammoSlot = transform.parent.GetComponent<Ammo>(); // For ebony and ivory
+            _ammoSlot = GetComponentInParent<Ammo>(); // For ebony and ivory
         }
 
         NullAlerter.AlertIfNull(_ammoSlot, nameof(_ammoSlot));
     }
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && _canShoot == true)
         {
-            Shoot();
+            StartCoroutine(Shoot());
         }
     }
 
-    private void Shoot()
+    private IEnumerator Shoot()
     {
+        _canShoot = false;
         if (_ammoSlot.AmmoAmount > 0)
         {
             PlayMuzzleFlash();
             ProcessRaycast();
             _ammoSlot.ReduceAmmo();
         }
+
+        yield return new WaitForSeconds(_timeBetweenShots);
+        _canShoot = true;
     }
 
     private void PlayMuzzleFlash()
@@ -69,6 +76,6 @@ public class Weapon : MonoBehaviour
     {
         GameObject hitEffect = Instantiate(_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
 
-        Destroy(hitEffect, 0.01f);
+        Destroy(hitEffect, 0.02f);
     }
 }
