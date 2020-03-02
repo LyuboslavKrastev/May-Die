@@ -14,6 +14,7 @@ public class DeathHandler : MonoBehaviour
     {
         _gameOverCanvas.enabled = true;
         Time.timeScale = 0; // stop the game
+        FindObjectOfType<WeaponSwitcher>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

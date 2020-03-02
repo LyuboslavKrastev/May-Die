@@ -16,13 +16,7 @@ public class Ammo : MonoBehaviour
         set
         {
             _ammoAmount = value;
-            _ammoText.text = $"Ammo: {_ammoAmount}";
         }
-    }
-
-    void Start()
-    {
-        AmmoAmount = _ammoAmount;
     }
 
     [SerializeField] private TextMeshProUGUI _ammoText;
@@ -30,5 +24,12 @@ public class Ammo : MonoBehaviour
     public void ReduceAmmo()
     {
         AmmoAmount -= 1;
+        UpdateAmmoText();
+    }
+
+    public void UpdateAmmoText()
+    {
+        _ammoText.text = $"Ammo:  {_ammoAmount}";
     }
 }
+

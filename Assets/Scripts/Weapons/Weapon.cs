@@ -13,7 +13,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] float _timeBetweenShots = 0.5f;
 
     [SerializeField] private int _damage = 1;
-    private void Start()
+
+    [SerializeField] private AmmoType _ammoType;
+    private void Awake()
     {
         _ammoSlot = GetComponent<Ammo>();
 
@@ -49,6 +51,12 @@ public class Weapon : MonoBehaviour
     private void PlayMuzzleFlash()
     {
         _muzzleFlash.Play();
+    }
+
+    void OnEnable()
+    {
+        _canShoot = true;
+        _ammoSlot.UpdateAmmoText();
     }
 
     private void ProcessRaycast()

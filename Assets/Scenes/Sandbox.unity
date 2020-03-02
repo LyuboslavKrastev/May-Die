@@ -1112,8 +1112,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 73.20001, y: -22.1}
-  m_SizeDelta: {x: 125.88, y: 33.640015}
+  m_AnchoredPosition: {x: 96.67, y: -22.82}
+  m_SizeDelta: {x: 167.36, y: 35.07}
   m_Pivot: {x: 0.5658219, y: 0.5}
 --- !u!114 &586087863
 MonoBehaviour:
@@ -2555,6 +2555,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2071030585}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1457367480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3344095326454982702, guid: c71df114930bce640b898ee158809060,
+    type: 3}
+  m_PrefabInstance: {fileID: 1498316229753708989}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1457367482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457367480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f97ee5b17b38f439ea622c877d4de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentWeaponIndex: 0
 --- !u!1001 &1468500606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3579,11 +3598,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1498316230731859486, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2510130680820974971, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2739521709088887317, guid: c71df114930bce640b898ee158809060,
         type: 3}
       propertyPath: _gameOverCanvas
       value: 
       objectReference: {fileID: 378140693}
+    - target: {fileID: 2881424864488587036, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: _ammoType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5682667200333735042, guid: c71df114930bce640b898ee158809060,
         type: 3}
       propertyPath: _ammoText
@@ -3604,6 +3638,21 @@ PrefabInstance:
       propertyPath: _ammoText
       value: 
       objectReference: {fileID: 586087863}
+    - target: {fileID: 8876544352816526036, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: _ammoType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973738269311615694, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: _ammoType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982161964858175205, guid: c71df114930bce640b898ee158809060,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9084282944554539097, guid: c71df114930bce640b898ee158809060,
         type: 3}
       propertyPath: _crossHair
