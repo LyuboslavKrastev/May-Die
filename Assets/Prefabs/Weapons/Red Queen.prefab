@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 101050}
   m_LocalRotation: {x: -0.01950908, y: -0.10462572, z: 0.010150681, w: 0.9942685}
   m_LocalPosition: {x: -0.0205, y: -0.0902, z: 0.1228}
-  m_LocalScale: {x: 0.5, y: 0.15, z: 0.09}
+  m_LocalScale: {x: 0.3, y: 0.15, z: 0.09}
   m_Children:
   - {fileID: 1446660371429217445}
   m_Father: {fileID: 0}
@@ -99,7 +99,9 @@ MonoBehaviour:
   _muzzleFlash: {fileID: 596233562638234602}
   _hitEffect: {fileID: 5698208854183100299, guid: 867b2f3c379f9dd4b83a7889935ee655,
     type: 3}
+  _timeBetweenShots: 0.5
   _damage: 20
+  _ammoType: 0
 --- !u!114 &7784794370489887555
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -79,7 +79,7 @@ public class WeaponSwitcher : MonoBehaviour
         }
         else if (Input.GetAxis("Mouse ScrollWheel") > 0) // up on the scrollwheel
         {
-            if (_currentWeaponIndex < 0)
+            if (_currentWeaponIndex <= 0)
             {
                 _currentWeaponIndex = transform.childCount -1;
             }

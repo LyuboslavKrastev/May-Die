@@ -9,11 +9,11 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        _hitPoints -= damage;
         if (_hitPoints < 1)
         {
             Destroy(this.gameObject);
         }
-        _hitPoints -= damage;
         BroadcastMessage("OnDamageTaken"); // at the moement such a method only exists within the EnemyAI class
     }
 }

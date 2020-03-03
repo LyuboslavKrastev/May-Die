@@ -51,7 +51,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &1498316229305101787
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ MonoBehaviour:
     BackwardSpeed: 4
     StrafeSpeed: 4
     RunMultiplier: 2
-    RunKey: 304
+    RunKey: 0
     JumpForce: 50
     SlopeCurveModifier:
       serializedVersion: 2
@@ -338,6 +338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1506131000876649466}
+  - component: {fileID: 1457367482}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
@@ -362,6 +363,32 @@ Transform:
   m_Father: {fileID: 1498316229292028507}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 2.111, y: 13.616, z: 0.648}
+--- !u!114 &1457367482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3344095326454982702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f97ee5b17b38f439ea622c877d4de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentWeaponIndex: 0
+--- !u!114 &1537051114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982161964858175205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0324dc9592d374c4ea02b77e84d30b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dashForce: 50
 --- !u!1001 &90872988380166875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -449,6 +476,11 @@ PrefabInstance:
       propertyPath: _damage
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 8821718856376715279, guid: 3180e806fdfcd7449a41dcde698cfe95,
+        type: 3}
+      propertyPath: _ammoType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9064558480059676693, guid: 3180e806fdfcd7449a41dcde698cfe95,
         type: 3}
       propertyPath: _camera
@@ -469,6 +501,11 @@ PrefabInstance:
       propertyPath: _damage
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 9064558480059676693, guid: 3180e806fdfcd7449a41dcde698cfe95,
+        type: 3}
+      propertyPath: _ammoType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9071890360559899710, guid: 3180e806fdfcd7449a41dcde698cfe95,
         type: 3}
       propertyPath: m_Name
@@ -481,6 +518,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3180e806fdfcd7449a41dcde698cfe95, type: 3}
+--- !u!1 &8982161964858175205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9071890360559899710, guid: 3180e806fdfcd7449a41dcde698cfe95,
+    type: 3}
+  m_PrefabInstance: {fileID: 90872988380166875}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1080588043552408444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1134306333930699175, guid: 3180e806fdfcd7449a41dcde698cfe95,
@@ -502,7 +545,7 @@ PrefabInstance:
     - target: {fileID: 748245289341069924, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 748245289341320886, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
         type: 3}
@@ -587,7 +630,12 @@ PrefabInstance:
     - target: {fileID: 5857734057019818846, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
         type: 3}
       propertyPath: _damage
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857734057019818846, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
+        type: 3}
+      propertyPath: _range
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb649899a9c1b5d4fa643ff7a3c42a12, type: 3}
@@ -622,11 +670,20 @@ PrefabInstance:
     - target: {fileID: -8851501623190179619, guid: 2c3055a11cb8f8540a181490a4c34b7c,
         type: 3}
       propertyPath: _damage
-      value: 100
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: -8851501623190179619, guid: 2c3055a11cb8f8540a181490a4c34b7c,
+        type: 3}
+      propertyPath: _ammoType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 101050, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
       propertyPath: m_Name
       value: Red Queen
+      objectReference: {fileID: 0}
+    - target: {fileID: 101050, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 457962, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
       propertyPath: m_LocalPosition.x

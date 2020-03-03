@@ -56,6 +56,11 @@ public class WeaponZoom : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        HipFire();
+    }
+
     private void HipFire()
     {
         _crossHair.enabled = true;
