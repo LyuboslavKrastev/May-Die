@@ -24,7 +24,7 @@ public class WeaponZoom : MonoBehaviour
 
     private float _zoomStrength = -20;
 
-    void Start()
+    void Awake()
     {
         _camera = FindObjectOfType<Camera>();
         NullAlerter.AlertIfNull(_camera, nameof(_camera));
@@ -63,7 +63,10 @@ public class WeaponZoom : MonoBehaviour
 
     private void HipFire()
     {
-        _crossHair.enabled = true;
+        if (_crossHair != null)
+        {
+            _crossHair.enabled = true;
+        }
         _camera.fieldOfView = _normalFieldOfView;
         transform.localPosition = _normalPosition;
         transform.localRotation = _normalRotation;

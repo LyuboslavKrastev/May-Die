@@ -640,6 +640,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.002
       objectReference: {fileID: 0}
+    - target: {fileID: 4221656812959743194, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5857734057019818846, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
         type: 3}
       propertyPath: _camera

@@ -12,17 +12,30 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
 
     private bool _isProvoked = false;
+
+    private EnemyHealth _health;
     
     void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-
         NullAlerter.AlertIfNull(_navMeshAgent, nameof(_navMeshAgent));
+
+        _health = GetComponent<EnemyHealth>();
+        NullAlerter.AlertIfNull(_health, nameof(_health));
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_health.IsDead == true)
+        {
+            _navMeshAgent.enabled = false;
+            GetComponent<Collider>().enabled = false;
+
+            enabled = false;
+            return;
+        }
+
         _distanceToTarget = Vector3.Distance(_target.position, transform.position);
         if (_isProvoked)
         {
@@ -55,14 +68,8 @@ public class EnemyAI : MonoBehaviour
     private void AttackTarget()
     {
         Animator animator = GetComponent<Animator>();
-        if (animator == null)
-        {
-            Debug.LogError("Animator is NULL!");
-        }
-        else
-        {
-            animator.SetBool("attack", true);
-        }
+        NullAlerter.AlertIfNull(animator, nameof(animator));
+        animator.SetBool("attack", true);
     }
 
     private void ChaseTarget()
