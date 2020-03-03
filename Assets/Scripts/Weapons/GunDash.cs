@@ -16,7 +16,7 @@ public class GunDash : MonoBehaviour
 
     private void Awake()
     {
-        _rigidBody = transform.root.GetComponentInParent<Rigidbody>();
+        _rigidBody = transform.root.GetComponent<Rigidbody>();
 
         NullAlerter.AlertIfNull(_rigidBody, nameof(Rigidbody));
     }
