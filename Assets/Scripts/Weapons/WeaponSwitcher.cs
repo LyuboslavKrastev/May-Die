@@ -9,6 +9,7 @@ public class WeaponSwitcher : MonoBehaviour
     public int BLUEROSE_INDEX { get; private set; }
     public int REDQUEEN_INDEX { get; private set; }
     public int EBONYANDIVORY_INDEX { get; private set; }
+    public int REBELLION_INDEX { get; private set; }
     void Start()
     {
         ActivateWeapon();
@@ -48,6 +49,9 @@ public class WeaponSwitcher : MonoBehaviour
             case "Ebony and Ivory":
                 EBONYANDIVORY_INDEX = weaponIndex;
                 break;
+            case "Rebellion":
+                REBELLION_INDEX = weaponIndex;
+                break;
             default:
                 break;
         }
@@ -70,13 +74,17 @@ public class WeaponSwitcher : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            _currentWeaponIndex = BLUEROSE_INDEX;
+            _currentWeaponIndex = REBELLION_INDEX;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            _currentWeaponIndex = REDQUEEN_INDEX;
+            _currentWeaponIndex = BLUEROSE_INDEX;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            _currentWeaponIndex = REDQUEEN_INDEX;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             _currentWeaponIndex = EBONYANDIVORY_INDEX;
         }

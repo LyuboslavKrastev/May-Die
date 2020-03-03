@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        print("taking damage");
         _hitPoints -= damage;
         if (_hitPoints < 1 && IsDead == false)
         {

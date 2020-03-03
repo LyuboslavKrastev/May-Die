@@ -2,7 +2,7 @@
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int _hitPoints = 100;
+    [SerializeField] private int _hitPoints = 500;
 
     public void TakeDamage(int damage)
     {

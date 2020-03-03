@@ -17,9 +17,6 @@ public class PlayerPickupHandler : MonoBehaviour
     {
         WeaponSwitcher weapons = GetComponentInChildren<WeaponSwitcher>();
         NullAlerter.AlertIfNull(weapons, nameof(weapons));
-
-        print(weapons.BLUEROSE_INDEX);
-        print(weapons.REDQUEEN_INDEX);
         int weaponIndex = 0;
 
         switch (type)
