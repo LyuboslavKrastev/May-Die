@@ -6,10 +6,9 @@ using UnityEngine;
 public class WeaponSwitcher : MonoBehaviour
 {
     [SerializeField] private int _currentWeaponIndex = 0;
-
-    private const int BLUEROSE_INDEX = 0;
-    private const int REDQUEEN_INDEX = 1;
-    private const int EBONYANDIVORY_INDEX = 2;
+    public int BLUEROSE_INDEX { get; private set; }
+    public int REDQUEEN_INDEX { get; private set; }
+    public int EBONYANDIVORY_INDEX { get; private set; }
     void Start()
     {
         ActivateWeapon();
@@ -18,7 +17,6 @@ public class WeaponSwitcher : MonoBehaviour
     private void ActivateWeapon()
     {
         int weaponIndex = 0;
-        Debug.Log("Looping");
 
         foreach (Transform weapon in transform)
         {
@@ -31,7 +29,27 @@ public class WeaponSwitcher : MonoBehaviour
                 weapon.gameObject.SetActive(false);
             }
 
+            IndexWeapons(weaponIndex, weapon);
+
             weaponIndex++;
+        }
+    }
+
+    private void IndexWeapons(int weaponIndex, Transform weapon)
+    {
+        switch (weapon.tag)
+        {
+            case "Blue Rose":
+                BLUEROSE_INDEX = weaponIndex;
+                break;
+            case "Red Queen":
+                REDQUEEN_INDEX = weaponIndex;
+                break;
+            case "Ebony and Ivory":
+                EBONYANDIVORY_INDEX = weaponIndex;
+                break;
+            default:
+                break;
         }
     }
 
@@ -81,7 +99,7 @@ public class WeaponSwitcher : MonoBehaviour
         {
             if (_currentWeaponIndex <= 0)
             {
-                _currentWeaponIndex = transform.childCount -1;
+                _currentWeaponIndex = transform.childCount - 1;
             }
             else
             {

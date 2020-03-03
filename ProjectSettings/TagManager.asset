@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Fire
   - Enemy
+  - Red Queen
+  - Blue Rose
+  - Ebony and Ivory
   layers:
   - Default
   - TransparentFX

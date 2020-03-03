@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1498316229298658207}
   - component: {fileID: -1848358493362081027}
   - component: {fileID: 2739521709088887317}
+  - component: {fileID: 1379046495}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -161,6 +162,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverCanvas: {fileID: 0}
+--- !u!114 &1379046495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498316229291601533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10201956fc95ec24691c0dd92bac921e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1498316229291601535
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +527,12 @@ PrefabInstance:
     - target: {fileID: 9071890360559899710, guid: 3180e806fdfcd7449a41dcde698cfe95,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071890360559899710, guid: 3180e806fdfcd7449a41dcde698cfe95,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ebony and Ivory
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3180e806fdfcd7449a41dcde698cfe95, type: 3}
@@ -546,6 +564,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 748245289341069924, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
+        type: 3}
+      propertyPath: m_TagString
+      value: Blue Rose
       objectReference: {fileID: 0}
     - target: {fileID: 748245289341320886, guid: eb649899a9c1b5d4fa643ff7a3c42a12,
         type: 3}
@@ -683,7 +706,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 101050, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 101050, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
+      propertyPath: m_TagString
+      value: Red Queen
       objectReference: {fileID: 0}
     - target: {fileID: 457962, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
       propertyPath: m_LocalPosition.x

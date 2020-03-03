@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int _damage = 1;
 
     [SerializeField] private AmmoType _ammoType;
-    private void Awake()
+    void Awake()
     {
         _ammoSlot = GetComponent<Ammo>();
 
@@ -25,7 +25,10 @@ public class Weapon : MonoBehaviour
         }
 
         NullAlerter.AlertIfNull(_ammoSlot, nameof(_ammoSlot));
+
+        _ammoSlot.UpdateAmmoText();
     }
+
     void Update()
     {
         if (Input.GetMouseButton(0) && _canShoot == true)
@@ -56,7 +59,6 @@ public class Weapon : MonoBehaviour
     void OnEnable()
     {
         _canShoot = true;
-        _ammoSlot.UpdateAmmoText();
     }
 
     private void ProcessRaycast()
