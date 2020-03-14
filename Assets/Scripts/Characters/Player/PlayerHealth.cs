@@ -1,39 +1,54 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int _hitPoints = 500;
-    [SerializeField] private TextMeshProUGUI _healthText;
+    private const float MAX_HEALTH = 500f;
+    [SerializeField] private float _currentHealth = MAX_HEALTH;
+    [SerializeField] private Slider _healthBar;
+    [SerializeField] private Text _healthText;
 
     void Start()
     {
-        UpdateHealthText();
+        UpdateHealthBar(100);
     }
 
-    private void UpdateHealthText()
+    private void UpdateHealthBar(float healthPercentage)
     {
-        _healthText.text = $"Health: {_hitPoints}";
+        _healthText.text = _currentHealth.ToString();
+        _healthBar.value = healthPercentage;
+    }
+
+    float CalculateHealth()
+    {
+        return _currentHealth / MAX_HEALTH;
     }
 
     public void TakeDamage(int damage)
     {       
-        if (_hitPoints > 0)
+        if (_currentHealth > 0)
         {
-            _hitPoints -= damage;
-            UpdateHealthText();
+            _currentHealth -= damage;
+            float healthPercentage = CalculateHealth();
+            UpdateHealthBar(healthPercentage);
         }
-        else
+        if (_currentHealth <= 0)
         {
-            DeathHandler deathHandler = GetComponent<DeathHandler>();
-
-            if (deathHandler == null)
-            {
-                Debug.LogError("DeathHandler is NULL!");
-                return;
-            }
-
-            deathHandler.HandleDeath();
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        DeathHandler deathHandler = GetComponent<DeathHandler>();
+
+        if (deathHandler == null)
+        {
+            Debug.LogError("DeathHandler is NULL!");
+            return;
+        }
+
+        deathHandler.HandleDeath();
     }
 }
