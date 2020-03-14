@@ -14,6 +14,8 @@ public class Sword : MonoBehaviour
     private Vector3 _normalPosition = new Vector3(-0.073f, -0.097f, 0.1304f);
     private Quaternion _normalRotation = Quaternion.Euler(39.915f, -85.999f, -2.726f);
 
+    [SerializeField] private int _damage = 500;
+
     [SerializeField] private GameObject _bloodEffect;
 
     private float _timeBetweenWings = 0.9f;
@@ -91,7 +93,7 @@ public class Sword : MonoBehaviour
             {
                 CreateHitImpact(hit);
                 EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-                target.TakeDamage(300);
+                target.TakeDamage(_damage);
             }
         }
     }
