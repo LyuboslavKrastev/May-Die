@@ -14,6 +14,8 @@ public class EnemyAI : MonoBehaviour
     private bool _isProvoked = false;
 
     private EnemyHealth _health;
+
+    private AudioSource _moveSound;
     
     void Start()
     {
@@ -22,6 +24,9 @@ public class EnemyAI : MonoBehaviour
 
         _health = GetComponent<EnemyHealth>();
         NullAlerter.AlertIfNull(_health, nameof(_health));
+
+        _moveSound = GetComponent<AudioSource>();
+        NullAlerter.AlertIfNull(_moveSound, nameof(_moveSound));
     }
 
     // Update is called once per frame
@@ -31,7 +36,7 @@ public class EnemyAI : MonoBehaviour
         {
             _navMeshAgent.enabled = false;
             GetComponent<Collider>().enabled = false;
-
+            StopMovingSound();
             enabled = false;
             return;
         }
@@ -40,11 +45,24 @@ public class EnemyAI : MonoBehaviour
         if (_isProvoked)
         {
             EngageTarget();
+            PlayMovingSound();
         }
         else if (_distanceToTarget <= _aggroRange)
         {
             _isProvoked = true;
         }
+    }
+
+    private void PlayMovingSound()
+    {
+        if (!_moveSound.isPlaying)
+        {
+            _moveSound.Play();
+        }
+    }
+    private void StopMovingSound()
+    {
+        _moveSound.Stop();
     }
 
     private void EngageTarget()
@@ -67,6 +85,7 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackTarget()
     {
+        StopMovingSound();
         Animator animator = GetComponent<Animator>();
         NullAlerter.AlertIfNull(animator, nameof(animator));
         animator.SetBool("attack", true);

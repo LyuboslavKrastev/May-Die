@@ -15,6 +15,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int _damage = 1;
 
     [SerializeField] private AmmoType _ammoType;
+
+    private AudioSource _attackSound;
     void Awake()
     {
         _ammoSlot = GetComponent<Ammo>();
@@ -27,13 +29,41 @@ public class Weapon : MonoBehaviour
         NullAlerter.AlertIfNull(_ammoSlot, nameof(_ammoSlot));
 
         _ammoSlot.UpdateAmmoText();
+
+        _attackSound = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && _canShoot == true)
+
+        if (Input.GetMouseButton(0) && _ammoSlot.AmmoAmount > 0)
         {
-            StartCoroutine(Shoot());
+            if (_canShoot == true)
+            {
+                StartCoroutine(Shoot());
+                PlayShootingSound();
+            }
+        }
+        else
+        {
+            StopShootingSound();
+        }
+
+    }
+
+    private void PlayShootingSound()
+    {
+        if (!_attackSound.isPlaying)
+        {
+            _attackSound.Play();
+        }
+    }
+
+    private void StopShootingSound()
+    {
+        if (!_attackSound.isPlaying || _ammoType == AmmoType.GunBullets) // the machine gun sound needs to be stopped as it is significantly longer and continues after stopped shooting
+        {
+            _attackSound.Stop();
         }
     }
 
@@ -75,7 +105,7 @@ public class Weapon : MonoBehaviour
                 CreateHitImpact(hit);
             }
             if (hitTag == "Enemy")
-            {               
+            {
                 EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
                 target.TakeDamage(_damage);
             }
